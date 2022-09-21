@@ -1,21 +1,40 @@
 import { NavLink } from "react-router-dom"
-
+import logoJv from '../assets/logos/logo-jv.svg'
+import iconCart from '../assets/icons/icon_shopping_cart.svg'
+import iconFlechita from '../assets/icons/flechita.svg'
+import '../styles/Header.scss'
 export const Header = () => {
   return (
-    <header>
-        <div>
-            <img src="" alt="logo jv" />
-        </div>
-        <nav>
-            <ul>
-                <li><NavLink to="/">All</NavLink></li>
-                <li><NavLink to="/clothes">Clothes</NavLink></li>
-                <li><NavLink to="/eletronics">Eletronics</NavLink></li>
-                <li><NavLink to="/furniture">Furniture</NavLink></li>
-                <li><NavLink to="/shoes">Shoes</NavLink></li>
-                <li><NavLink to="/others">Others</NavLink></li>             
-            </ul>
+    <header className="Header">
+      <div className="Header-logo">
+        <img src={logoJv} alt="logo jv" />
+      </div>
+      <div className="Header-nav">
+        <nav className="nav--left">
+          <ul>
+            <li><NavLink to="/"  end>All</NavLink></li>
+            <li><NavLink to="/clothes">Clothes</NavLink></li>
+            <li><NavLink to="/eletronics">Eletronics</NavLink></li>
+            <li><NavLink to="/furniture">Furniture</NavLink></li>
+            <li><NavLink to="/shoes">Shoes</NavLink></li>
+            <li><NavLink to="/others">Others</NavLink></li>
+          </ul>
         </nav>
+
+        <div className="nav--rigth">
+          <div className="rigth-email">
+            <p>example@email.com </p>
+            <img src={iconFlechita} alt="" />
+          </div>
+          <div className="rigth-carrito">
+
+            <img src={iconCart} alt="C" />
+
+          </div>
+        </div>
+      </div>
+      
+
     </header>
   )
 }
