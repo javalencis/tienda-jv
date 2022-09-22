@@ -1,8 +1,8 @@
 import '../styles/Search.scss'
-export const Search = ({ filterForName }) => {
+export const Search = ({ setSearchValue }) => {
 
   const handleChange = (e) => {
-    filterForName(e.target.value)
+    setSearchValue(e.target.value)
    
   }
 

@@ -12,13 +12,7 @@ export const useFecthProducts = (url,category=false) => {
     const getFecthData = async () => {
         const res = await fetch(url)
         const data = await res.json()
-
-        if (category) {
-            setProducts(filterCategory(data, category))
-        }else{
-            setProducts(data)
-            console.log('Al')
-        }
+        setProducts(data)  
 
       
     }
@@ -26,8 +20,7 @@ export const useFecthProducts = (url,category=false) => {
 
     useEffect(()=>{
         getFecthData()
-    },[category])
+    },[])
 
-    return {products,
-            setProducts};
+    return products;
 }
