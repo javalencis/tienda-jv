@@ -1,0 +1,40 @@
+.ProductItem{
+    width: 220px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 20px;
+}
+
+.ProductItem-img{
+    width: 220px;
+    height:220px ;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img{
+        width: 220px;
+        min-height: 220px;
+
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.ProductItem-info{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .info--price{
+        font-weight: bold;
+    }
+    .info--title{
+        color: var(--color-text-gray);
+    }
+
+}   

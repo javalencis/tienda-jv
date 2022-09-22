@@ -10,6 +10,7 @@ export const App = () => {
         <Layout>
             <Routes>
                <Route path='/' element={<Home/>}/> 
+               <Route exact path='/:category' element={<Home/>}/> 
                <Route path='*' element={<NotFound/>}/> 
             </Routes>
         </Layout>

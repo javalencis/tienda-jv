@@ -1,11 +1,14 @@
 :root{
     --heigth-header:60px;
+    --color-primary:#ACD9B2;
+    --color-text-gray: #a9a8a8;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 1;
 }
 body{
     font-family: 'Quicksand', sans-serif;
