@@ -4,7 +4,8 @@ import { ProductItem } from "../components/ProductItem"
 import { Search } from "../components/Search"
 import { ProductList } from "../containers/ProductList"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { DetailItem } from "../components/DetailItem"
 
 
 const url = 'https://api.escuelajs.co/api/v1/products'
@@ -15,7 +16,9 @@ const filterCategory = (products, category) => {
 }
 export const Home = () => {
 
-  const [searchValue , setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('')
+  const [clickItem, setClickItem] = useState(false)
+  const [idItemClicked, setIdItemClicked] = useState({})
   const { category } = useParams();
 
   let products = useFecthProducts(url)
@@ -31,23 +34,30 @@ export const Home = () => {
     listProducts = products.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()))
 
   } else {
-    listProducts= products
+    listProducts = products
   }
-
 
 
 
   return (
     <main>
       <Search setSearchValue={setSearchValue} />
-      <ProductList>
+      <ProductList clickItem={clickItem}>
         {
           listProducts.map(product => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem
+              key={product.id}
+              product={product}
+              setClickItem={setClickItem} 
+              setIdItemClicked={setIdItemClicked}
+              />
           ))
         }
       </ProductList>
-
+      {clickItem && <DetailItem  
+                        idItemClicked={idItemClicked}
+                        setClickItem={setClickItem}
+                        />}
     </main>
   )
-}
+} 

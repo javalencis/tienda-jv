@@ -1,12 +1,9 @@
 
 import { useEffect, useState } from "react"
 
-const filterCategory = (products, category) => {
-    const nCategory = category.charAt(0).toUpperCase() + category.slice(1)
-    return products.filter(product => product.category.name === nCategory)
-  }
 
-export const useFecthProducts = (url,category=false) => {
+
+export const useFecthProducts = (url) => {
     const [products, setProducts] = useState([])
 
     const getFecthData = async () => {

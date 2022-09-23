@@ -12,7 +12,7 @@
     height:220px ;
     overflow: hidden;
     border-radius: 20px;
-
+    cursor: pointer;
     img{
         width: 220px;
         min-height: 220px;
@@ -34,7 +34,8 @@
         font-weight: bold;
     }
     .info--title{
-        color: var(--color-text-gray);
+        color: #797979;
     }
 
 }   
+

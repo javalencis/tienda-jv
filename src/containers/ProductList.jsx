@@ -1,8 +1,8 @@
 import '../styles/ProductList.scss'
-export const ProductList = ({ children }) => {
+export const ProductList = ({ children , clickItem}) => {
   return (
-    <section className="ProductList">
+    <section className={clickItem ? `ProductList changeWidth`: `ProductList`}>
       {children}
     </section>
   )
-}
+  }

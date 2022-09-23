@@ -4,12 +4,15 @@ import btAddCart from '../assets/icons/bt_add_to_cart.svg'
 import '../styles/ProductItem.scss'
 
 
-export const ProductItem = ({product}) => {
-
+export const ProductItem = ({product,setClickItem,setIdItemClicked}) => {
+    const handleClickItem = () => {
+        setClickItem(true)
+        setIdItemClicked(product)
+      }
     return (
         <div className='ProductItem'>
             <div className='ProductItem-img'>
-                <img src={product.images[0]} alt="" />
+                <img src={product.images[0]} alt="" onClick={handleClickItem}/>
             </div>
             <div className='ProductItem-info'>
                 <div className='info'>

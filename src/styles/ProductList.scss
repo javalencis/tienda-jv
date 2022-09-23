@@ -3,4 +3,10 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
+
+}
+
+.changeWidth{
+    width: calc(100% - 400px);
+    
 }
