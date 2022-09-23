@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import btAddCart from '../assets/icons/bt_add_to_cart.svg'
 
 import '../styles/ProductItem.scss'
@@ -11,8 +11,8 @@ export const ProductItem = ({product,setClickItem,setIdItemClicked}) => {
       }
     return (
         <div className='ProductItem'>
-            <div className='ProductItem-img'>
-                <img src={product.images[0]} alt="" onClick={handleClickItem}/>
+            <div className='ProductItem-img' onClick={handleClickItem}>
+                <img src={product.images[0]} alt="" />
             </div>
             <div className='ProductItem-info'>
                 <div className='info'>

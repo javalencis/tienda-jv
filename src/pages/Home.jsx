@@ -1,19 +1,13 @@
 
 import { useFecthProducts } from "../hooks/useFecthProducts"
-import { ProductItem } from "../components/ProductItem"
-import { Search } from "../components/Search"
+import { ProductItem, Search, DetailItem } from "../components"
 import { ProductList } from "../containers/ProductList"
 import { useParams } from "react-router-dom"
 import { useState } from "react"
-import { DetailItem } from "../components/DetailItem"
-
+import { filterCategory } from "../helpers/functions"
 
 const url = 'https://api.escuelajs.co/api/v1/products'
 
-const filterCategory = (products, category) => {
-  const nCategory = category.charAt(0).toUpperCase() + category.slice(1)
-  return products.filter(product => product.category.name === nCategory)
-}
 export const Home = () => {
 
   const [searchValue, setSearchValue] = useState('')
@@ -48,16 +42,18 @@ export const Home = () => {
             <ProductItem
               key={product.id}
               product={product}
-              setClickItem={setClickItem} 
+              setClickItem={setClickItem}
               setIdItemClicked={setIdItemClicked}
-              />
+            />
           ))
         }
       </ProductList>
-      {clickItem && <DetailItem  
-                        idItemClicked={idItemClicked}
-                        setClickItem={setClickItem}
-                        />}
+      {clickItem
+        &&
+        <DetailItem
+          idItemClicked={idItemClicked}
+          setClickItem={setClickItem}
+        />}
     </main>
   )
 } 
