@@ -1,5 +1,12 @@
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 import '../styles/Search.scss'
-export const Search = ({ setSearchValue }) => {
+
+
+
+export const Search = () => {
+
+  const {setSearchValue} = useContext(AppContext)
 
   const handleChange = (e) => {
     setSearchValue(e.target.value)

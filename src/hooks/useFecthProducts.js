@@ -7,9 +7,14 @@ export const useFecthProducts = (url) => {
     const [products, setProducts] = useState([])
 
     const getFecthData = async () => {
-        const res = await fetch(url)
-        const data = await res.json()
-        setProducts(data)  
+        try{
+            const res = await fetch(url)
+            const data = await res.json()
+            setProducts(data)  
+
+        }catch(e){
+            console.log(e)
+        }
 
       
     }

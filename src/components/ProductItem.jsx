@@ -1,10 +1,18 @@
 
+import { useContext } from 'react'
 import btAddCart from '../assets/icons/bt_add_to_cart.svg'
+import { AppContext } from '../context/AppContext'
 
 import '../styles/ProductItem.scss'
 
 
-export const ProductItem = ({product,setClickItem,setIdItemClicked}) => {
+export const ProductItem = ({product}) => {
+
+    const {setClickItem,setIdItemClicked,setCart} = useContext(AppContext)
+    const handleClickAddCart = () => {
+        setCart(cart => [...cart,product])
+    }
+
     const handleClickItem = () => {
         setClickItem(true)
         setIdItemClicked(product)
@@ -19,7 +27,7 @@ export const ProductItem = ({product,setClickItem,setIdItemClicked}) => {
                     <p className='info--price'>$ {product.price}</p>
                     <p className='info--title'>{product.title}</p>
                 </div>
-                <div className='addCart'>
+                <div className='addCart' onClick={handleClickAddCart}>
                     <img src={btAddCart} alt="" />
                 </div>
             </div>

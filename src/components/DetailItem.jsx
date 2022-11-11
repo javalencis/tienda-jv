@@ -1,6 +1,11 @@
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 import '../styles/DetailItem.scss'
 
-export const DetailItem = ({ idItemClicked,setClickItem }) => {
+export const DetailItem = () => {
+    const { idItemClicked,setClickItem } = useContext(AppContext)
+
+
     const handleCloseItem = () => {
         setClickItem(false)
         
